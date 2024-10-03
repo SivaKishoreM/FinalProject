@@ -1,0 +1,41 @@
+﻿@model EventManagements.Models.Tableevent
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Tableevent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eventname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventdate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-primary" /> 
+            <br />
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

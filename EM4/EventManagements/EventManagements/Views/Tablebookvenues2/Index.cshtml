@@ -1,0 +1,118 @@
+﻿@model IEnumerable<EventManagements.Models.Tablebookvenue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Venue Booking Index</h2>
+
+<p>
+    @Html.ActionLink("Back", "AdminDashboard", "Admin", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.name)</th>
+            <th>@Html.DisplayNameFor(model => model.mobilenumber)</th>
+            <th>@Html.DisplayNameFor(model => model.event1)</th>
+            <th>@Html.DisplayNameFor(model => model.venue)</th>
+            <th>@Html.DisplayNameFor(model => model.eventdate)</th>
+            <th>@Html.DisplayNameFor(model => model.requirements)</th>
+            @*<th>Actions</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => item.name)</td>
+                <td>@Html.DisplayFor(modelItem => item.mobilenumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.event1)</td>
+                <td>@Html.DisplayFor(modelItem => item.venue)</td>
+                <td>@Html.DisplayFor(modelItem => item.eventdate)</td>
+                <td>@Html.DisplayFor(modelItem => item.requirements)</td>
+               @* <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.id }, new { @class = "btn btn-warning btn-sm" }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-info btn-sm" })
+                    @Html.ActionLink("Delete", "Delete", new { id = item.id }, new { @class = "btn btn-danger btn-sm" })
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    body {
+        background-color: mistyrose;
+        background-image: url('../../models/images/navratri-highly-detailed-floral-decoration.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    .thead-dark {
+        background-color: #343a40;
+        color: white;
+    }
+
+    tbody tr{
+        background-color: lightyellow;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+
+    /* Add some padding and spacing for a cleaner look */
+    .table th, .table td {
+        padding: 12px;
+    }
+
+    /* Optional: Add a light background for the table */
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Buttons hover effect */
+    .btn:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+    }
+</style>

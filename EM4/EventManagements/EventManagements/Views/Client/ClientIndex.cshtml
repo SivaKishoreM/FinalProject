@@ -1,0 +1,95 @@
+﻿
+@{
+    ViewBag.Title = "ClientIndex";
+}
+
+<h2>ClientIndex</h2>
+<p>
+    @Html.ActionLink("Back", "UserLogin", "Account", null, new { @class = "btn btn-primary" })
+</p>
+
+<style>
+    body {
+        background-color: mintcream;
+        background-image: url('../../models/images/photorealistic-wedding-venue-with-intricate-decor-ornaments.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    h2{
+        color:white;
+    }
+    .container {
+        margin-top: 30px; /* Space above the container */
+    }
+
+    .list-group {
+        padding: 15px; /* Padding around the list group */
+        border-radius: 5px; /* Rounded corners for the list group */
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    }
+
+    .list-group-item {
+        border: none; /* Remove border for list items */
+        padding: 10px 0; /* Vertical padding for list items */
+    }
+
+    .btn {
+        font-size: 16px; /* Increase font size for better visibility */
+        text-align: center; /* Center align text in buttons */
+        padding: 10px; /* Add padding for buttons */
+    }
+
+    .btn-primary {
+        background-color: #007bff; /* Bootstrap primary color */
+        border-color: #007bff; /* Border color */
+    }
+
+    .btn-info {
+        background-color: #17a2b8; /* Bootstrap info color */
+        border-color: #17a2b8; /* Border color */
+    }
+
+    .btn-success {
+        background-color: #28a745; /* Bootstrap success color */
+        border-color: #28a745; /* Border color */
+    }
+
+    .btn:hover {
+        opacity: 0.9; /* Slightly reduce opacity on hover */
+        transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+        transform: scale(1.02); /* Slightly enlarge button on hover */
+    }
+
+    .list-group-item {
+        background-color: transparent
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+           
+            <ul class="list-group">
+                <li class="list-group-item">
+                    @Html.ActionLink("Events", "Index", "Tableevents1", null, new { @class = "btn btn-success" })
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Services And Charges", "Index", "Tableservices1", null, new { @class = "btn btn-warning" })
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-6">
+            
+            <ul class="list-group">
+                <li class="list-group-item">
+                    @Html.ActionLink("Book The Venue", "Index", "Tablebookvenues", null, new { @class = "btn btn-primary" })
+                </li>
+                <li class="list-group-item">
+                    @Html.ActionLink("Update Or Cancel Booking", "Index", "Tablebookvenues1", null, new { @class = "btn btn-danger" })
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+

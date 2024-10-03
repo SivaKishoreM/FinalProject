@@ -1,0 +1,118 @@
+﻿@model IEnumerable<EventManagements.Models.Tablevenue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Venue List</h2>
+
+<p>
+    @Html.ActionLink("Back", "AdminDashboard", "Admin", null, new { @class = "btn btn-primary" })
+</p>
+<p>
+    @Html.ActionLink("Create New", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.venue)</th>
+            <th>@Html.DisplayNameFor(model => model.events1)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.venue)</td>
+                <td>@Html.DisplayFor(modelItem => item.events1)</td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.venueid }, new { @class = "btn btn-warning btn-sm" }) |
+                    @*@Html.ActionLink("Details", "Details", new { id = item.venueid }, new { @class = "btn btn-info btn-sm" }) |*@
+                    @Html.ActionLink("Delete", "Delete", new { id = item.venueid }, new { @class = "btn btn-danger btn-sm" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    body {
+        background-color: lightyellow;
+        background-image: url('../../models/images/photorealistic-wedding-venue-with-intricate-decor-ornaments (3).jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+        font-weight: bold;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;
+        border-spacing: 0;
+    }
+
+    .thead-dark {
+        background-color: #343a40;
+        color: white;
+    }
+
+    tbody tr{
+        background-color: mistyrose;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-success {
+        background-color: #28a745;
+        border-color: #28a745;
+    }
+
+    .btn-warning {
+        background-color: #ffc107;
+        border-color: #ffc107;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    .table th, .table td {
+        padding: 12px;
+        text-align: left;
+    }
+
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Add some margin to the buttons */
+    .btn:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+</style>

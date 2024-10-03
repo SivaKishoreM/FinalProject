@@ -1,0 +1,14 @@
+Name: Arshadkhan
+
+Peer Review:
+
+1. Background of Main page can be improved.
+2. All operations are working fine.
+3. Amazing payment form.
+
+-------------------------------------------------------------------
+
+Self Review:
+
+1.It was very challenging for me to design css & Bootstrap.
+2.Faced challenges while running test cases.

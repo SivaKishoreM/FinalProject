@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventManagementSystemModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Admins">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="30" />
+    <Property Name="Password" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="serviceid" />
+    </Key>
+    <Property Name="serviceid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="servicename" Type="nvarchar" MaxLength="100" />
+    <Property Name="servicecharge" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Tablebookvenue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="100" />
+    <Property Name="mobilenumber" Type="varchar" MaxLength="10" />
+    <Property Name="event1" Type="nvarchar" MaxLength="200" />
+    <Property Name="venue" Type="nvarchar" MaxLength="100" />
+    <Property Name="eventdate" Type="datetime" />
+    <Property Name="requirements" Type="varchar" MaxLength="200" />
+  </EntityType>
+  <EntityType Name="Tableevent">
+    <Key>
+      <PropertyRef Name="eventid" />
+    </Key>
+    <Property Name="eventid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="eventname" Type="nvarchar" MaxLength="100" />
+    <Property Name="eventdate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Tableservice">
+    <Key>
+      <PropertyRef Name="serviceid" />
+    </Key>
+    <Property Name="serviceid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="servicename" Type="nvarchar" MaxLength="100" />
+    <Property Name="servicecharge" Type="decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Tablevenue">
+    <Key>
+      <PropertyRef Name="venueid" />
+    </Key>
+    <Property Name="venueid" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="venue" Type="nvarchar" MaxLength="100" />
+    <Property Name="events1" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="users">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Fullname" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Username" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="Role" Type="nvarchar" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EventManagementSystemModelStoreContainer">
+    <EntitySet Name="Admins" EntityType="Self.Admins" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tablebookvenue" EntityType="Self.Tablebookvenue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tableevent" EntityType="Self.Tableevent" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tableservice" EntityType="Self.Tableservice" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tablevenue" EntityType="Self.Tablevenue" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="users" EntityType="Self.users" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

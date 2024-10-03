@@ -1,0 +1,106 @@
+﻿@model IEnumerable<EventManagements.Models.Tablebookvenue>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Venue Booking Index</h2>
+
+
+<p>
+    @Html.ActionLink("Back", "ClientIndex", "Client", null, new { @class = "btn btn-primary" })
+</p>
+
+<p>
+    @Html.ActionLink("Book", "Create", null, new { @class = "btn btn-success" })
+</p>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.name)</th>
+            <th>@Html.DisplayNameFor(model => model.mobilenumber)</th>
+            <th>@Html.DisplayNameFor(model => model.event1)</th>
+            <th>@Html.DisplayNameFor(model => model.venue)</th>
+            <th>@Html.DisplayNameFor(model => model.eventdate)</th>
+            <th>@Html.DisplayNameFor(model => model.requirements)</th>
+            @*<th>Actions</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                <td>@Html.DisplayFor(modelItem => item.name)</td>
+                <td>@Html.DisplayFor(modelItem => item.mobilenumber)</td>
+                <td>@Html.DisplayFor(modelItem => item.event1)</td>
+                <td>@Html.DisplayFor(modelItem => item.venue)</td>
+                <td>@Html.DisplayFor(modelItem => item.eventdate)</td>
+                <td>@Html.DisplayFor(modelItem => item.requirements)</td>
+
+                @*<td>
+                    @Html.ActionLink("Details", "Details", new { id = item.id }, new { @class = "btn btn-info btn-sm" })
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+    body {
+        background-color: moccasin;
+        background-image: url('../../models/images/navratri-decoration-with-candles.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+
+    h2 {
+        color: white;
+      
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;
+    }
+
+    thead {
+        background-color: #343a40;
+        color: white;
+    }
+
+    td {
+        background-color: brown; /* Light gray on hover */
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+    .table th {
+        background-color: #343a40;
+    }
+    /* Add some padding and spacing for a cleaner look */
+    .table td {
+        padding: 12px;
+        background-color: #f2f2f2;
+    }
+
+    /* Optional: Add a light background for the table */
+    tbody tr:nth-child(even) {
+        
+    }
+
+    /* Buttons hover effect */
+    .btn:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+    }
+</style>

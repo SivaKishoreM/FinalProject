@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="EventManagementSystemModelStoreContainer" CdmEntityContainer="EventManagementSystemEntities">
+    <EntitySetMapping Name="services">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="serviceid" ColumnName="serviceid" />
+          <ScalarProperty Name="servicename" ColumnName="servicename" />
+          <ScalarProperty Name="servicecharge" ColumnName="servicecharge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablebookvenues">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.Tablebookvenue">
+        <MappingFragment StoreEntitySet="Tablebookvenue">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="mobilenumber" ColumnName="mobilenumber" />
+          <ScalarProperty Name="event1" ColumnName="event1" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="eventdate" ColumnName="eventdate" />
+          <ScalarProperty Name="requirements" ColumnName="requirements" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tableevents">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.Tableevent">
+        <MappingFragment StoreEntitySet="Tableevent">
+          <ScalarProperty Name="eventid" ColumnName="eventid" />
+          <ScalarProperty Name="eventname" ColumnName="eventname" />
+          <ScalarProperty Name="eventdate" ColumnName="eventdate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tableservices">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.Tableservice">
+        <MappingFragment StoreEntitySet="Tableservice">
+          <ScalarProperty Name="serviceid" ColumnName="serviceid" />
+          <ScalarProperty Name="servicename" ColumnName="servicename" />
+          <ScalarProperty Name="servicecharge" ColumnName="servicecharge" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tablevenues">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.Tablevenue">
+        <MappingFragment StoreEntitySet="Tablevenue">
+          <ScalarProperty Name="venueid" ColumnName="venueid" />
+          <ScalarProperty Name="venue" ColumnName="venue" />
+          <ScalarProperty Name="events1" ColumnName="events1" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="users">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.user">
+        <MappingFragment StoreEntitySet="users">
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="Fullname" ColumnName="Fullname" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="password" ColumnName="password" />
+          <ScalarProperty Name="Role" ColumnName="Role" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Admins">
+      <EntityTypeMapping TypeName="EventManagementSystemModel.Admin">
+        <MappingFragment StoreEntitySet="Admins">
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="AdminId" ColumnName="AdminId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

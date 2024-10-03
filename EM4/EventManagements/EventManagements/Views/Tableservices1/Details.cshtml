@@ -1,0 +1,34 @@
+﻿@model EventManagements.Models.Tableservice
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tableservice</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.servicename)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.servicename)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.servicecharge)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.servicecharge)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.serviceid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,74 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="EventManagementSystemModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="serviceid" />
+    </Key>
+    <Property Name="serviceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="servicename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="servicecharge" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Tablebookvenue">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="name" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="mobilenumber" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="event1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="venue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="eventdate" Type="DateTime" Precision="3" />
+    <Property Name="requirements" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Tableevent">
+    <Key>
+      <PropertyRef Name="eventid" />
+    </Key>
+    <Property Name="eventid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="eventname" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="eventdate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="Tableservice">
+    <Key>
+      <PropertyRef Name="serviceid" />
+    </Key>
+    <Property Name="serviceid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="servicename" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="servicecharge" Type="Decimal" Precision="18" Scale="2" />
+  </EntityType>
+  <EntityType Name="Tablevenue">
+    <Key>
+      <PropertyRef Name="venueid" />
+    </Key>
+    <Property Name="venueid" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="venue" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="events1" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="user">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Fullname" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="password" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Role" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="EventManagementSystemEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="services" EntityType="Self.service" />
+    <EntitySet Name="Tablebookvenues" EntityType="Self.Tablebookvenue" />
+    <EntitySet Name="Tableevents" EntityType="Self.Tableevent" />
+    <EntitySet Name="Tableservices" EntityType="Self.Tableservice" />
+    <EntitySet Name="Tablevenues" EntityType="Self.Tablevenue" />
+    <EntitySet Name="users" EntityType="Self.user" />
+    <EntitySet Name="Admins" EntityType="EventManagementSystemModel.Admin" />
+  </EntityContainer>
+  <EntityType Name="Admin">
+    <Key>
+      <PropertyRef Name="AdminId" />
+    </Key>
+    <Property Name="AdminId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="UserName" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="Password" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

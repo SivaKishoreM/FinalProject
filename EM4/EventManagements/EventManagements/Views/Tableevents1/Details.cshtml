@@ -1,0 +1,34 @@
+﻿@model EventManagements.Models.Tableevent
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Tableevent</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.eventname)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventname)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.eventdate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.eventdate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.eventid }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

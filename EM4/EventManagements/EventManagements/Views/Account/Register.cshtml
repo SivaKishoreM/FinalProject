@@ -1,0 +1,89 @@
+﻿@model EventManagements.Models.user
+@{ ViewBag.Title = "Register"; }
+<p>
+    @Html.ActionLink("Back", "AccountIndex", "Account", null, new { @class = "btn btn-primary" })
+</p>
+
+
+<h2>Register</h2>
+
+<style>
+   
+    p {
+        width: 6%;
+    }
+    body {
+        background-color: #f4f4f4; /* Light background color */
+        font-family: Arial, sans-serif; /* Font style */
+        background-color: lavender;
+    }
+
+    .form-group {
+        margin-bottom: 15px; /* Space between form groups */
+    }
+
+    .form-control {
+        border: 1px solid #ccc; /* Border for inputs */
+        border-radius: 4px; /* Rounded corners for inputs */
+        padding: 10px; /* Padding inside inputs */
+        width: 100%; /* Full width */
+        box-sizing: border-box; /* Box sizing to include padding and border */
+    }
+
+        .form-control:focus {
+            border-color: #007bff; /* Border color on focus */
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); /* Focus shadow */
+        }
+
+    .btn-primary {
+        background-color: #28a745; /* Button background color (green) */
+        border: none; /* Remove border */
+        color: white; /* Text color */
+        padding: 10px 15px; /* Button padding */
+        border-radius: 5px; /* Rounded corners for button */
+        cursor: pointer; /* Pointer cursor */
+        width: 100%; /* Full width for button */
+        transition: background-color 0.3s; /* Smooth transition for hover effect */
+    }
+
+        .btn-primary:hover {
+            background-color: #218838; /* Darker green on hover */
+        }
+
+    .alert {
+        margin-top: 15px; /* Space above alert */
+        padding: 10px; /* Inner padding for alert */
+        border-radius: 5px; /* Rounded corners for alert */
+    }
+
+    .text-danger {
+        color: #dc3545; /* Danger color for validation messages */
+    }
+</style>
+
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.LabelFor(m => m.Fullname)
+        @Html.TextBoxFor(m => m.Fullname, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Fullname, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Username)
+        @Html.TextBoxFor(m => m.Username, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Username, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.password)
+        @Html.TextBoxFor(m => m.password, new { @class = "form-control", type = "password" })
+        @Html.ValidationMessageFor(m => m.password, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Role)
+        @Html.TextBoxFor(m => m.Role, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Role, "", new { @class = "text-danger" })
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Register" class="btn btn-primary" />
+    </div>
+}

@@ -1,0 +1,97 @@
+﻿@model IEnumerable<EventManagements.Models.Tableevent>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Event List</h2>
+
+<p>
+    @Html.ActionLink("Back", "ClientIndex", "Client", null, new { @class = "btn btn-primary" })
+</p>
+
+<table class="table table-bordered table-hover table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.eventname)</th>
+            <th>@Html.DisplayNameFor(model => model.eventdate)</th>
+            @*<th>Actions</th>*@
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.eventname)</td>
+                <td>@Html.DisplayFor(modelItem => item.eventdate)</td>
+                @*<td>
+                    @Html.ActionLink("Details", "Details", new { id = item.eventid }, new { @class = "btn btn-info btn-sm" })
+                </td>*@
+            </tr>
+        }
+    </tbody>
+</table>
+
+<style>
+
+    body {
+        background-color: moccasin;
+        background-image: url('../../models/images/many-beautiful-balls-decorating-space.jpg');
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        min-height: 100vh;
+    }
+    h2 {
+        color: white;
+        margin-bottom: 20px;
+    }
+
+    table {
+        width: 100%;
+        margin-top: 20px;
+        font-size: 14px;                                 
+    }
+
+    .thead-dark {
+        background-color: #343a40;
+        color: white;
+    }
+
+    tbody tr{
+        background-color: plum;
+    }
+
+    .btn {
+        margin-right: 5px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-info {
+        background-color: #17a2b8;
+        border-color: #17a2b8;
+    }
+
+    p {
+        margin-top: 15px;
+    }
+
+    /* Add some padding and spacing for a cleaner look */
+    .table th, .table td {
+        padding: 12px;
+    }
+
+    /* Optional: Add a light background for the table */
+    tbody tr:nth-child(even) {
+        background-color: #f2f2f2;
+    }
+
+    /* Buttons hover effect */
+    .btn:hover {
+        opacity: 0.9;
+        transition: 0.3s;
+    }
+</style>
